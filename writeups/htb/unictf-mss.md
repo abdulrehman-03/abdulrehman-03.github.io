@@ -13,7 +13,7 @@ We were given a python script to locally test and see the encryption algorithm. 
 ![challenge](./images/unictf-2023/mss1.png)
 
 <br>
-The query prompt is taking a json input and executing the functions based on our input. Following code is handling the query parameter.<br>
+The query prompt is taking a json input and executing the functions based on our input. Following code is handling the query parameter.<br><br>
 
 ![challenge](./images/unictf-2023/mss2.png)
 
@@ -28,7 +28,7 @@ To get the encrypted flag we can simply write a simple json in the query prompt:
 
 The `encrypt_flag` function returns the hex values of iv and flag.
 
-But to decrypt the flag, we first need to get the key. We have to use the `get_share` function for that.<br>
+But to decrypt the flag, we first need to get the key. We have to use the `get_share` function for that.<br><br>
 
 ![challenge](./images/unictf-2023/mss3.png)
 
@@ -41,7 +41,7 @@ The `get_share` function takes x as an argument. We can provide this value in th
 <br>
 If the value of x is less than 2^15, it will call the poly function which will perfrom some calculations on the key based on the value of x we provide and return the result as y. Luckily, there is an unintended solution for this challenge. That is, if we provide 0 as the value of x, than the value of y will be the actual key (The poly function won’t change the value of our key).
 
-So with that, we got our key, iv and encrypted flag. All we have to do now is just reverse the process using these values.<br>
+So with that, we got our key, iv and encrypted flag. All we have to do now is just reverse the process using these values.<br><br>
 
 ```python
 from hashlib import sha256

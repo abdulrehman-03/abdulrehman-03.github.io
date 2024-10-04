@@ -8,26 +8,26 @@ In this writeup, I will walk you through MSS Revenge, an easy crypto challenge f
 
 In the previous challenge, we found a loophole through which we can obtain the encryption key by providing 0 as the value of x. So HTB realeased a fix and now we can only enter the value that is greater than 0. Besides that, this challenge is same as the previous one.
 
-So diving in, the condition that changed in the new challenge lies in our `get_share` function:
+So diving in, the condition that changed in the new challenge lies in our `get_share` function:<br><br>
 
 
 ![challenge](./images/unictf-2023/mssr1.png)
 
-
-As you can see, if x is less than 1, it throws an error. So now we know that we cannot find the key directly. Instead we have to perform modular operation to reverse the process and get the initial value of the coeffs variable(the key).
+<br>
+As you can see, if x is less than 1, it throws an error. So now we know that we cannot find the key directly. Instead we have to perform modular operation to reverse the process and get the initial value of the coeffs variable(the key).<br><br>
 
 
 ![challenge](./images/unictf-2023/mssr2.png)
 
-
+<br>
 You can see here the first value of coeffs is the key that is used for encrypting.
 
-The coeffs is a list that is later summed up using `sum()` function. If somehow we can reverse the process and reach the initial value, we will get our key.
+The coeffs is a list that is later summed up using `sum()` function. If somehow we can reverse the process and reach the initial value, we will get our key.<br><br>
 
 
 ![challenge](./images/unictf-2023/mssr3.png)
 
-
+<br>
 To get that, we have to obtain few values of y with respect to x and compare them. Precisely, we have to obtain 18 values as we only get limited tries.
 
 After obtaining the x and its corresponding resulting values, we can CRT(chinese remainder theorem) module from sumpy library.
@@ -41,8 +41,7 @@ print(key)
 ```
 
 
-And we will get the key through this process. All we have to do now is decrypt the flag using this key. We can use the same algorithm we used in the previous challenge:
-
+And we will get the key through this process. All we have to do now is decrypt the flag using this key. We can use the same algorithm we used in the previous challenge:<br><br>
 
 ```python
 from hashlib import sha256
@@ -70,8 +69,10 @@ decrypted_flag = decrypt_flag(key, iv, enc_flag)
 print(decrypted_flag)
 ```
 
+<br><br>
 ![challenge](./images/unictf-2023/mssr4.png)
-
+<br>
 
 And here is the Flag!
-
+<br>
+<br>
