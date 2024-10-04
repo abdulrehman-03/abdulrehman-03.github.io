@@ -4,6 +4,6 @@ layout: default
 
 # HackTheBox writeups
 
-### HTB University CTF 2023
+[HTB University CTF 2023](unictf-mss.md)
 
-![Title](./images/unictf-title.jpg)
+![Title](./images/unictf-2023/unictf-title.jpg)
