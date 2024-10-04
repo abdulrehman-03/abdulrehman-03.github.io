@@ -8,7 +8,7 @@ This is a writeup of an easy crypto challenge from HackTheBox University CTF 202
 
 >The solution I will discuss in this article is the unintented one (HTB later released a new challenge as a >patch of this challenge).
 
-We were given a python script to locally test and see the encryption algorithm. After running the script, few instructions are printed and then we will be prompted for input.<br>
+We were given a python script to locally test and see the encryption algorithm. After running the script, few instructions are printed and then we will be prompted for input.<br><br>
 
 ![challenge](./images/unictf-2023/mss1.png)
 
