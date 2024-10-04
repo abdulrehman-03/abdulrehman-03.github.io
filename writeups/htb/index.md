@@ -4,6 +4,9 @@ layout: default
 
 # HackTheBox writeups
 
-[HTB University CTF 2023](unictf-mss.md)
+### University CTF 2023
+
+[HTB MSS Writeup — University CTF 2023](unictf-mss.md)
+[HTB MSS-Revenge Writeup — University CTF 2023](unictf-mssrevenge.md)
 
 ![Title](./images/unictf-2023/unictf-title.jpg)
