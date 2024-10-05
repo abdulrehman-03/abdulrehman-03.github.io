@@ -12,12 +12,12 @@ There should be whitespace between paragraphs. We recommend including a README, 
 
 # Welcome
 
-Here, I post writeups of CTF challenges and document learning resources that I think would be helpful for everyone.<br>
+Here, I post writeups of CTF challenges and document learning resources that I think would be helpful for everyone.<br><br>
 
 
-### Activity
+### Recent activity
 
-<a href="./writeups/htb/" class="btn">HTB Uni CTF</a>
+<a href="./writeups/htb/" class="btn-long">HTB Uni CTF</a>
 
 
 <!-- ## Header 2
